@@ -637,7 +637,7 @@
   <div class="stats-inner">
     <div class="stat"><div class="stat-num">$5,780</div><div class="stat-lbl">Avg Annual Savings</div></div>
     <div class="stat"><div class="stat-num">1,000+</div><div class="stat-lbl">Homes Upgraded</div></div>
-    <div class="stat"><div class="stat-num">30%</div><div class="stat-lbl">Federal Solar Credit</div></div>
+
     <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Services · One Free Visit</div></div>
     <div class="stat"><div class="stat-num">4.9★</div><div class="stat-lbl">Customer Rating</div></div>
   </div>
@@ -785,7 +785,7 @@
     <h2 class="sec-title light" style="max-width:640px">Don't Leave <em>Thousands</em><br>On The Table</h2>
     <p style="color:rgba(255,255,255,0.65);font-size:0.95rem;margin-top:0.75rem;max-width:520px;line-height:1.7">Between federal credits, state programs, and utility rebates, most homeowners qualify for significant incentives. We identify and maximize every dollar available to you.</p>
     <div class="rebates-grid">
-      <div class="reb-card reveal"><div class="reb-amt">30%</div><h4>Federal Solar ITC</h4><p>The Investment Tax Credit covers 30% of your solar system cost directly off your federal tax bill.</p></div>
+
       <div class="reb-card reveal" style="transition-delay:0.1s"><div class="reb-amt">$2,000</div><h4>Heat Pump Credit</h4><p>Up to $2,000 in annual tax credits for qualifying heat pump heating and cooling systems.</p></div>
       <div class="reb-card reveal" style="transition-delay:0.2s"><div class="reb-amt">$1,600</div><h4>Insulation Credit</h4><p>Federal credits cover up to $1,600 for insulation and air sealing improvements.</p></div>
       <div class="reb-card reveal" style="transition-delay:0.3s"><div class="reb-amt">+More</div><h4>State &amp; Utility Rebates</h4><p>State programs and utility rebates stack on top of federal credits — we map every incentive in your area.</p></div>
@@ -937,7 +937,7 @@
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I have to buy anything after the assessment? <div class="faq-ico">+</div></div><div class="faq-ans"><p>No. There is absolutely zero obligation to purchase anything after your assessment. Our advisors are energy educators, not salespeople. Many homeowners simply use the report to better understand their home — and that's completely fine with us.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What services does the assessment cover? <div class="faq-ico">+</div></div><div class="faq-ans"><p>Our assessment covers all three service areas: solar potential analysis, HVAC system evaluation (heating, cooling, insulation, water heater), and roof condition inspection. You get a complete picture in one visit.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much can I really save? <div class="faq-ico">+</div></div><div class="faq-ans"><p>Our customers save an average of $5,780 per year. Solar alone can cut your electricity bill by 50–90%. Insulation and HVAC upgrades often save $500–$2,000 annually. Your assessment will include exact estimates for your specific home.</p></div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What rebates and tax credits are available? <div class="faq-ico">+</div></div><div class="faq-ans"><p>The federal solar ITC covers 30% of solar costs. The Inflation Reduction Act provides up to $2,000 for heat pumps and $1,600 for insulation. Many states and utilities offer additional rebates. We identify every incentive available in your area.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What rebates and tax credits are available? <div class="faq-ico">+</div></div><div class="faq-ans"><p>The Inflation Reduction Act provides up to $2,000 for heat pumps and $1,600 for insulation. Many states and utilities offer additional rebates. We identify every incentive available in your area.</p></div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How soon can I get an appointment? <div class="faq-ico">+</div></div><div class="faq-ans"><p>Most homeowners get an appointment within the same week. We offer flexible morning, afternoon, and weekend slots. Submit the form and we'll reach out within one business day to confirm your time.</p></div></div>
       </div>
     </div>
@@ -996,6 +996,27 @@
   </div>
 </div>
 
+<!-- Ascend CRM Form Embed -->
+<iframe
+    src="https://links.ascendcrm.io/widget/form/sqzaqLRJv9Hn4dvxkXJc"
+    style="display:none;width:100%;height:100%;border:none;border-radius:0px;position:fixed;top:0;left:0;z-index:10000"
+    id="popup-sqzaqLRJv9Hn4dvxkXJc" 
+    data-layout="{'id':'POPUP'}"
+    data-trigger-type="onClick"
+    data-trigger-value="Free Assessment"
+    data-activation-type="onClick"
+    data-activation-value="Free Assessment"
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Electrician Service Request"
+    data-height="1003"
+    data-layout-iframe-id="popup-sqzaqLRJv9Hn4dvxkXJc"
+    data-form-id="sqzaqLRJv9Hn4dvxkXJc"
+    title="Electrician Service Request"
+    data-modal-height="500">
+</iframe>
+<script src="https://links.ascendcrm.io/js/form_embed.js"></script>
+
 <script>
   function toggleFaq(el) {
     const item = el.parentElement;
@@ -1004,14 +1025,20 @@
     if (!open) item.classList.add('open');
   }
   function openModal() {
-    document.getElementById('modal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    document.getElementById('mForm').style.display = 'block';
-    document.getElementById('mSuccess').style.display = 'none';
+    // Show Ascend CRM popup
+    const ascendPopup = document.getElementById('popup-sqzaqLRJv9Hn4dvxkXJc');
+    if (ascendPopup) {
+      ascendPopup.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
   }
   function closeModal() {
-    document.getElementById('modal').classList.remove('open');
-    document.body.style.overflow = '';
+    // Hide Ascend CRM popup
+    const ascendPopup = document.getElementById('popup-sqzaqLRJv9Hn4dvxkXJc');
+    if (ascendPopup) {
+      ascendPopup.style.display = 'none';
+      document.body.style.overflow = '';
+    }
   }
   function handleOverlay(e) { if (e.target === document.getElementById('modal')) closeModal(); }
   function submitModal() {
